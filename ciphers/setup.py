@@ -21,10 +21,10 @@ def read(*names, **kwargs):
 
 
 setup(
-    name='Unit-testing',
+    name='Ciphers',
     version='1.0',
     license='MIT License',
-    description='Unit testing and testing setup.py and Makefiles',
+    description='Ciphers to practice unit testing!',
     author='Rusty',
     author_email='rustyxlol@pm.me',
     url='https://github.com/rustyxlol/Junkyard',
