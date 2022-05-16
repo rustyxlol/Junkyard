@@ -29,6 +29,20 @@ class Employee:
         first, last, email = emp_string.split('-')
         return cls(first, last, email)
 
+    @property  # This is a getter
+    def full_name(self):
+        return f"{self.first_name} {self.last_name}"
+
+    @full_name.setter
+    def full_name(self, name):
+        self.first_name, self.last_name = name.split(' ')
+
+    @full_name.deleter
+    def full_name(self):
+        print("Executed deleter!")
+        self.first_name = None
+        self.last_name = None
+
     def get_employee(self):
         """
         Returns information of an instance
@@ -97,6 +111,7 @@ class Manager(Employee):
 
 if __name__ == "__main__":
     corey = Employee.from_string('Corey-Schafer-cs@youtube.com')
+    print(corey.full_name)
 
     dev_1 = Developer('Rusty', 'Hawker', 'rhemail@pm.me', 5000000, 'Python')
     dev_2 = Developer('Dusty', 'Cawker', 'dcemail@pm.me', 5000000, 'C#')
@@ -113,3 +128,7 @@ if __name__ == "__main__":
     print(f"Total employees = {Employee.total_employees}")
 
     mgr_1.print_developers()
+
+    del corey.full_name
+
+    print(corey.full_name)
