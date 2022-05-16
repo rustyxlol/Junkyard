@@ -64,8 +64,6 @@ class Developer(Employee):
 class Manager(Employee):
     """
     Inheritance Demo 2
-
-    :param Employee: _description_
     """
 
     def __init__(self, first, last, email, salary, developers=None):
